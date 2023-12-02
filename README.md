@@ -11,11 +11,10 @@ but you can increase the number of languages ​​supported by developing addit
 # overview
 * Loading property files for supported languages.
 * String and datetime conversion according to supported languages.  
-  (Additional implementation is required for languages other than en and ja)
+  (If languages other than en and ja, require additional implementation)
 * String and numeric conversion according to supported languages.  
-  (Additional implementation is required for languages other than en and ja)
-* User information storage class.
-  (please override and use)
+  (If languages other than en and ja, require additional implementation)
+* Base class for user information storage classes.
 * Container class using ThreadLocal.
 * Case-insensitive map function.
 * Data comparison function.
