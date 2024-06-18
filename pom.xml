@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>Universal X Java Framework - Common Package</name>
+  <description>
+    This archive is the basic package required to use the 'Universal X Framework'.
+    Mainly provides the following functions:
+     * Manage resource files (property format)
+     * Object transfer function in thread using 'ThreadLocal'
+     * Base class for manage user information classes
+     * Wrapper class for log output
+     * Provides some utilities:
+        - Convert datetime and numeric formats (multi-language support)
+        - Wrapper class for BLOB/CLOB data
+        - Case-insensitive Map
+        - File I/O functions
+        - String encryption and decryption functions
+
+    Support JDK Version
+     * 1.11.n JDK11
+     * 1.17.n JDK17
+     * 1.21.n JDK21
+  </description>
+
+  <groupId>jp.co.cam.universal</groupId>
+  <artifactId>universal-commons</artifactId>
+  <version>1.11.1</version>
+
+  <!--// Author //-->
+  <organization>
+   <name>Camel Engineering LLP</name>
+  </organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+      <maven.compiler.target>11</maven.compiler.target>
+    <java.version>11</java.version>
+  </properties>
+
+
+  <!--// Build settings //-->
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+
+    <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+
+    <!-- Resources path -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
+
+
+    <plugins>
+
+      <!--// Compiler settings //-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+          <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.6.3</version>
+        <configuration>
+          <source>1.7</source>
+          <author>true</author>
+          <show>public</show>
+          <charset>UTF-8</charset>
+          <encoding>UTF-8</encoding>
+          <docencoding>UTF-8</docencoding>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <!-- Dependencies JAR -->
+  <dependencies>
+
+    <!-- [JDK9]
+     - jp.co.cam.usax.util.text.Crypt@encode
+     - jp.co.cam.usax.util.text.Crypt@decode
+     -  javax.xml.bind.DatatypeConverter
+     -->
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>4.0.2</version>
+    </dependency>
+
+  </dependencies>
+</project>

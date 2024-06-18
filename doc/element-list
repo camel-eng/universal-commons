@@ -1,0 +1,13 @@
+jp.co.cam.universal.configuration
+jp.co.cam.universal.configuration.impl
+jp.co.cam.universal.context
+jp.co.cam.universal.context.impl
+jp.co.cam.universal.debug
+jp.co.cam.universal.debug.impl
+jp.co.cam.universal.util
+jp.co.cam.universal.util.io
+jp.co.cam.universal.util.text
+jp.co.cam.universal.util.text.format.datetime
+jp.co.cam.universal.util.text.format.datetime.lang
+jp.co.cam.universal.util.text.format.number
+jp.co.cam.universal.util.text.format.number.lang
